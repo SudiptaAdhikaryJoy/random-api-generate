@@ -42,7 +42,7 @@ module.exports.getUserDetails = (req, res) => {
         })
     }
 
-}
+};
 
 module.exports.updateUser = (req, res)=>{
     const {id} = req.params;
