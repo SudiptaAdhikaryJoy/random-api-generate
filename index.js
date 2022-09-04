@@ -23,6 +23,10 @@ app.all("*", (req, res)=>{
     res.send('We could not find!')
 })
 
+app.get('/', (req, res)=>{
+    res.send("Running server");
+})
+
 app.listen(port, ()=>{
     console.log(`App listening on port ${port}`);
 });
