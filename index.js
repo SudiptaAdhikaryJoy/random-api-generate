@@ -20,7 +20,7 @@ app.use("/delete", usersRoutes);
 app.use(errorHandler);
 
 app.all("*", (req, res)=>{
-    res.send('We could not find!')
+    res.status(400).send('Bad request');
 })
 
 app.get('/', (req, res)=>{
