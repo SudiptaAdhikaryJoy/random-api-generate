@@ -5,18 +5,12 @@ const limiter = require('../../middleware/limiter.js')
 
 const router = express.Router();
 
-// router.get('/', (req, res) => {
-//     res.send("tools found");
-// })
-
-// router.post("/tools", (req, res) => {
-//     res.send("tools added");
-// })
-
 router.route('/').get(usersController.getAllUsers)
-router.route('/user/save').post(usersController.saveUsers)
+router.route('/save').post(usersController.saveUsers)
     
 
-router.route("/:id").get(userCount, limiter, usersController.getUserDetails).patch(usersController.updateUser).delete(usersController.deleteUser);
+router.route("/:id").get(userCount, limiter, usersController.getUserDetails)
+router.route("/update/:id").patch(usersController.updateUser);
+router.route("/delete/:id").delete(usersController.deleteUser);
 
 module.exports = router;

@@ -12,8 +12,10 @@ app.use(cors());
 app.use(express.json());
 app.use(userCount);
 
-app.use("/users/all", usersRoutes);
-app.use("/users/", usersRoutes);
+app.use("/user/all", usersRoutes);
+app.use("/user", usersRoutes);
+app.use("/update", usersRoutes);
+app.use("/delete", usersRoutes);
 // app.use(limiter)
 app.use(errorHandler);
 
